@@ -1,11 +1,29 @@
+import React from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div>
-      Put components here to make them show up in the browser. Good Luck!
-    </div>
-  );
+import SearchBar from '../SearchBar/SearchBar';
+import SearchResults from '../SearchResults/SearchResults';
+import Playlist from '../Playlist/Playlist';
+
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Ja<span className="highlight">mmm</span>ing</h1>
+        <div className="App">
+          {/* <!-- Add a SearchBar component --> */}
+          <SearchBar />
+          <div className="App-playlist">
+            {/* <!-- Add a SearchResults component --> */}
+            <SearchResults />
+            {/* <!-- Add a Playlist component --> */}
+            <Playlist />
+          </div>
+        </div>
+      </div>
+    )
+  }
 }
 
 export default App;
