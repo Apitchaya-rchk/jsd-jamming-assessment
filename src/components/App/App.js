@@ -7,6 +7,21 @@ import Playlist from '../Playlist/Playlist';
 
 
 class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchResults: [{ name: 'O.O', artist: 'NMIXX', album: 'NMIXX 1st Single <AD MARE>', id: 1 },
+      { name: 'Stereotype', artist: 'STAYC', album: '1st mini album [STEREOTYPE]', id: 2 },
+      { name: 'Savage', artist: 'aespa', album: '1st mini album [Savage]', id: 3 }], 
+      playlistName: 'My Playlist',
+      playlistTracks: [{ name: 'Only', artist: 'LEE HI', album: '3rd Album "4 ONLY"', id: 4 },
+      { name: 'Love Me Like That', artist: 'Sam Kim (샘김)', album: 'Nevertheless, (Original Television Soundtrack)', id: 5 },
+      { name: 'Psycho', artist: 'Red Velvet', album: 'The ReVe Festival: Finale', id: 6 }]
+    }
+
+  }
+
   render() {
     return (
       <div>
@@ -16,9 +31,9 @@ class App extends React.Component {
           <SearchBar />
           <div className="App-playlist">
             {/* <!-- Add a SearchResults component --> */}
-            <SearchResults />
+            <SearchResults searchResults={this.state.searchResults} />
             {/* <!-- Add a Playlist component --> */}
-            <Playlist />
+            <Playlist playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks}/>
           </div>
         </div>
       </div>
